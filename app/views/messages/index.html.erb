@@ -1,6 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Messages</h1>
+<div id="message_counter">
+  <%= @messages.count %>
+</div>
+
+<div id="new_message">
+  <!-- render Message/partial -->
+  <%= render partial: "messages/form", locals: {message: Message.new} %>
+</div>
 
 <div id="messages">
   <% @messages.each do |message| %>
